@@ -14,6 +14,7 @@ function App() {
     if (isAuth) {
       dispatch(userCurrent());
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="App">

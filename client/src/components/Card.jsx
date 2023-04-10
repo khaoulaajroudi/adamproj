@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import coin from "../Images/coin.png";
-
-const Card = ({ pdp,el }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { getuser } from "../JS/userSlice/userSlice";
+const Card = ({ key,pdp,el }) => {
+  const dispatch=useDispatch()
+  useEffect(() => {
+    dispatch(getuser())
+  }, [dispatch])
+  const users=useSelector((store)=>store.user?.user)
+console.log(users)
+const [nick, setnick] = useState("")
   return (
     <div className="dash_card">
 
@@ -9,7 +17,9 @@ const Card = ({ pdp,el }) => {
 
         <div className="dash_card_top_left">
           <img src={pdp} alt="" id="dash_pdp" />
-          <span>{el?.partie}</span>
+          {/* <span>{el?.partie}</span> */}
+          {users?.filter((e)=>(e._id==el?.partie)?setnick(e.nickname):"")}
+          <span>{nick}</span>
         </div>
 
         <div className="dash_card_top_right">

@@ -104,4 +104,14 @@ router.put('/:id',async(req,res)=>{
      console.log(error) 
   }
 })
+
+// get all tournoi
+router.get('/all',async(req,res)=>{
+  try {
+     let result= await User.find()
+     res.send({user:result,msg:"all user found"})
+  } catch (error) {
+     console.log(error) 
+  }
+})
 module.exports = router;

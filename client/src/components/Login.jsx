@@ -50,8 +50,8 @@ const Login = () => {
             <input type="email" placeholder="Email" onChange={(e)=>setloginuser({...loginuser,email:e.target.value})}/>
             <input type="password" placeholder="Password" onChange={(e)=>setloginuser({...loginuser,password:e.target.value})}/>
             <span className='forget-pass'>Forgot your password? </span>
-            <button onClick={()=>(dispatch(userLogin(loginuser))&&navigate('/dashboard'))}>Sign In</button>
-           
+            <button onClick={(e)=>(dispatch(userLogin(loginuser))&&navigate('/dashboard'))}>Sign In</button>
+
           </form>
         </div>
         <div className="overlay-container">

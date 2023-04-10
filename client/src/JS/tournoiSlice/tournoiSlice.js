@@ -90,6 +90,6 @@ export const tournoiSlice = createSlice({
   }
 })
 // Action creators are generated for each case reducer function
-export const {} = tournoiSlice.actions
+export const {t} = tournoiSlice.actions
 
 export default tournoiSlice.reducer

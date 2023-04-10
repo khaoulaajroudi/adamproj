@@ -45,8 +45,10 @@ const navigate = useNavigate()
           <li onClick={()=>setlien(4)} >Buy Coins</li>
           <li onClick={()=>setlien(5)}>Settings</li>
         </ul>
-        <div className="dash_sidebar_logout">
-        <button  onClick={()=>dispatch(logout(), navigate("/login"))} >logout</button>
+        <div className="dash_sidebar_logout" onClick={()=>dispatch(logout(), navigate("/login"))}>
+        <i className="fa-solid fa-right-from-bracket"></i>
+        <button   >Logout</button>
+        
         </div>
       </div>
       {
