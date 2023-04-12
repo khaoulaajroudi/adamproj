@@ -6,7 +6,7 @@ import Lobby from "./Lobby";
 import { updatetournoi } from "../JS/tournoiSlice/tournoiSlice";
 
 
-const Card = ({setlien,key,pdp,el }) => {
+const Card = ({setlien,key,pdp,el}) => {
   const dispatch=useDispatch()
   const user=useSelector((store)=>store.user?.user)
   const [show_card, setshow_card] = useState(true)
@@ -53,7 +53,8 @@ const Card = ({setlien,key,pdp,el }) => {
           >
             Join
           </button>
-          <button onClick={()=>(dispatch(updatetournoi({id:el?._id,tournoi:updateparticipant}))&&handleRefresh())}>ok</button>
+          <button onClick={()=>(dispatch(updatetournoi({id:el?._id,tournoi:updateparticipant}))&&setlien(2))}>ok</button>
+         
           </div>
           
       

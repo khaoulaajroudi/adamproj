@@ -41,7 +41,7 @@ const DashHome = ({setlob,setlien,pdp,search}) => {
   return (
     <div className='dash_home'>
       {tournoii?.filter((el) => el.gamename.toLowerCase().includes(search.toLowerCase())).map((el) => (
-        <Card  setlien={setlien} key={el.id} pdp={pdp} el={el}/>
+        <Card  setlien={setlien} key={el.id} pdp={pdp} el={el} />
       ))}
 
     </div>

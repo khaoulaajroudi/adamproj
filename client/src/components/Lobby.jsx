@@ -4,7 +4,7 @@ import coin from "../Images/coin.png";
 
 
 
-const Lobby = ({pdp}) => {
+const Lobby = ({pdp,state}) => {
   return (
     <div className='lobby'>
       <h1>My Lobby:</h1>
@@ -18,7 +18,7 @@ const Lobby = ({pdp}) => {
                 <button>I'M READY</button>
             </div>
             <div className="lobby_betmoney">
-                <span></span>
+                <span>{state.money}</span>
                 <img src={coin} alt="" />
             </div>
             <div className="lobby_user1">
