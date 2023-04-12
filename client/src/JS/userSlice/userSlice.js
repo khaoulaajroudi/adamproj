@@ -99,14 +99,14 @@ export const userSlice = createSlice({
       state.status = "pending";
     },
     [updateuser.fulfilled]: (state, action) => {
-      state.status = "succcessssss";
+      state.status = "update succcessssss";
       state.user = action.payload?.data?.user;
     },
     [updateuser.rejected]: (state) => {
-      state.status = "fail";
+      state.status = "fail update";
     },
     [getuser.pending]: (state) => {
-      state.status = "pending";
+      state.status = "pending ";
     },
     [getuser.fulfilled]: (state, action) => {
       state.status = "succcessssss";

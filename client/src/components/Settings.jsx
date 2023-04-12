@@ -65,6 +65,7 @@ const Settings = ({ pdp }) => {
         <div className="settings_buttons">
           <button>Discard</button>
           <button onClick={()=>(dispatch(updateuser({id:user?._id,user:updatedu})))}>Save Changes</button>
+          
         </div>
       </div>
     </div>

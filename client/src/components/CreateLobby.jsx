@@ -11,7 +11,9 @@ const CreateLobby = ({setlien}) => {
     mode:"",
     money:"",
     description:"",
-    partie:user?._id
+    partie:user,
+    owner:user?.nickname,
+    participant:""
   })
   return (
     <div className="create_lobby">

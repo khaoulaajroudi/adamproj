@@ -29,7 +29,7 @@ import Card from './Card'
 import { useDispatch, useSelector } from 'react-redux';
 import { gettournoi } from '../JS/tournoiSlice/tournoiSlice';
 
-const DashHome = ({pdp,search}) => {
+const DashHome = ({setlob,setlien,pdp,search}) => {
   const dispatch = useDispatch();
   
   useEffect(() => {
@@ -41,8 +41,9 @@ const DashHome = ({pdp,search}) => {
   return (
     <div className='dash_home'>
       {tournoii?.filter((el) => el.gamename.toLowerCase().includes(search.toLowerCase())).map((el) => (
-        <Card key={el.id} pdp={pdp} el={el}/>
+        <Card  setlien={setlien} key={el.id} pdp={pdp} el={el}/>
       ))}
+
     </div>
   )
 }

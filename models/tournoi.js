@@ -18,6 +18,14 @@ const tournoiSchema = new schema({
         type:String,
         required:true,
     },
-    partie:[]
+    partie:[{}],
+    owner:{
+        type:String,
+        required:true,
+    },
+    participant:{
+        type:String,
+        required:true,
+    },
 });
 module.exports = mongoose.model("tournoi", tournoiSchema);

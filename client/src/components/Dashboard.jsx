@@ -19,7 +19,7 @@ const [search, setsearch] = useState("")
 const user=useSelector((store)=>store.user?.user)
 const dispatch = useDispatch()
 const navigate = useNavigate()
-
+const [lob, setlob] = useState({})
   return (
     <div className='dash'>
 
@@ -56,7 +56,7 @@ const navigate = useNavigate()
       }
       <div className="dash_content">
          {
-        lien===1?<DashHome pdp={pdp} search={search}/>:lien===2? <Lobby pdp={pdp}/> : lien===3? <CreateLobby setlien={setlien} />:lien===4? <DashBuy/>:lien===5?<Settings pdp={pdp}/>:null
+        lien===1?<DashHome setlob={setlob}   setlien={setlien} pdp={pdp} search={search}/>:lien===2? <Lobby lob={lob} pdp={pdp}/> : lien===3? <CreateLobby setlien={setlien} />:lien===4? <DashBuy/>:lien===5?<Settings pdp={pdp}/>:null
 
          }
       </div>

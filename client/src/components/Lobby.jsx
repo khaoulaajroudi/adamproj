@@ -1,5 +1,8 @@
-import React from 'react'
+import React, {  useEffect } from 'react'
 import coin from "../Images/coin.png";
+
+
+
 
 const Lobby = ({pdp}) => {
   return (
@@ -11,11 +14,11 @@ const Lobby = ({pdp}) => {
             <div className="lobby_users">
             <div className="lobby_user1">
                 <img src={pdp} alt="" />
-                <span>Adam Kadhi</span>
+                <span>rrr</span>
                 <button>I'M READY</button>
             </div>
             <div className="lobby_betmoney">
-                <span>120</span>
+                <span></span>
                 <img src={coin} alt="" />
             </div>
             <div className="lobby_user1">

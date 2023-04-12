@@ -47,6 +47,20 @@ tournoirouter.put('/:id',async(req,res)=>{
     }
 })
 
+// tournoirouter.put("/partie/:id", async (req, res) => {
+//    try {
+//      let result = await tournoi.findByIdAndUpdate(
+//        {
+//          _id: req.params.id,
+//        },
+//        { $push: { partie: req.body } }
+//      );
+//      res.send({ msg: " partie added updated" });
+//    } catch (error) {
+//      console.log(error);
+//      res.send({ msg: "fail" });
+//    }
+//  });
 
 
 // delete

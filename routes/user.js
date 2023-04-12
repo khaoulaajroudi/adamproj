@@ -105,7 +105,7 @@ router.put('/:id',async(req,res)=>{
   }
 })
 
-// get all tournoi
+// get all users
 router.get('/all',async(req,res)=>{
   try {
      let result= await User.find()
