@@ -11,7 +11,6 @@ const CreateLobby = ({setlien}) => {
     mode:"",
     money:"",
     description:"",
-    partie:user,
     owner:user?.nickname,
     participant:""
   })

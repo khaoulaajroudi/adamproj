@@ -12,9 +12,16 @@ const Card = ({setlien,key,pdp,el }) => {
   const [show_card, setshow_card] = useState(true)
   const tournoi=useSelector((store)=>store.tournoi?.tournoi)
   const [updateparticipant, setupdateparticipant] = useState({
+    gamename:el?.gamename,
+    mode:el?.mode,
+    money:el?.money,
+    description:el?.description,
+    owner:el?.owner,
     participant:"",
   })
-  
+  const handleRefresh = () => {
+    window.location.reload();
+  }
   return (
     
       <div className="dash_card">
@@ -23,7 +30,6 @@ const Card = ({setlien,key,pdp,el }) => {
 
         <div className="dash_card_top_left">
           <img src={pdp} alt="" id="dash_pdp" />
-          {/* {el?.partie.map((el)=><span>{el.nickname}</span> )} */}
           <span>{el?.owner}</span>
         </div>
 
@@ -41,16 +47,13 @@ const Card = ({setlien,key,pdp,el }) => {
           </div>
           <div className="dash_card_bot">
           <span>{el?.mode}</span>
-          {/* <button id="dash_card_bot_right" onClick={()=>(dispatch(updateparticipant({id:el?._id,participant:user})),setlien(2))}>Join</button> */}
           <button 
             id="dash_card_bot_right" 
-            onClick={() => {
-              setupdateparticipant({...updateparticipant, participant: user?.nickname});
-              dispatch(updatetournoi({id:el?._id,tournoi:updateparticipant}));
-            }}
+            onClick={() => setupdateparticipant ({...updateparticipant, participant: user?.nickname})}
           >
             Join
           </button>
+          <button onClick={()=>(dispatch(updatetournoi({id:el?._id,tournoi:updateparticipant}))&&handleRefresh())}>ok</button>
           </div>
           
       

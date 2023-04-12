@@ -13,6 +13,9 @@ const Settings = ({ pdp }) => {
   })
  const [changepass, setchangepass] = useState(0)
  const dispatch=useDispatch()
+ const handleRefresh = () => {
+  window.location.reload();
+}
   return (
     <div className="settings">
       <h1>Settings</h1>
@@ -64,7 +67,7 @@ const Settings = ({ pdp }) => {
         </div>
         <div className="settings_buttons">
           <button>Discard</button>
-          <button onClick={()=>(dispatch(updateuser({id:user?._id,user:updatedu})))}>Save Changes</button>
+          <button onClick={()=>(dispatch(updateuser({id:user?._id,user:updatedu}))&&handleRefresh())}>Save Changes</button>
           
         </div>
       </div>
