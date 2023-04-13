@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getuser } from "../JS/userSlice/userSlice";
 import Lobby from "./Lobby";
 import { updatetournoi } from "../JS/tournoiSlice/tournoiSlice";
+import {  useNavigate } from "react-router-dom";
 
 
 const Card = ({setlien,key,pdp,el}) => {
+  const navigate = useNavigate()
   const dispatch=useDispatch()
   const user=useSelector((store)=>store.user?.user)
   const [show_card, setshow_card] = useState(true)
@@ -53,7 +55,7 @@ const Card = ({setlien,key,pdp,el}) => {
           >
             Join
           </button>
-          <button onClick={()=>(dispatch(updatetournoi({id:el?._id,tournoi:updateparticipant}))&&setlien(2))}>ok</button>
+          <button onClick={()=>(dispatch(updatetournoi({id:el?._id,tournoi:updateparticipant}))&& navigate(`/partie/${el?._id}`))}>ok</button>
          
           </div>
           

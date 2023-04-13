@@ -10,6 +10,14 @@ return result
     console.log(error)
     }
 })
+export const getbyidtournoi=createAsyncThunk('tournoibyid/get',async(id)=>{
+    try{
+let result=axios.get(`http://localhost:5000/tournoi/${id}`)
+return result
+    }catch(error){
+    console.log(error)
+    }
+})
 
 export const addtournoi=createAsyncThunk('tournoi/add',async(tournoi)=>{
     try{
@@ -75,6 +83,16 @@ export const tournoiSlice = createSlice({
         state.tournoi=action.payload.data?.tournoi
     },
     [gettournoi.rejected]:(state,action)=>{
+        state.status="failed";
+    },
+    [getbyidtournoi.pending]:(state)=>{
+        state.status="pending";
+    },
+    [getbyidtournoi.fulfilled]:(state,action)=>{
+        state.status="success";
+        state.tournoi=action.payload.data?.tournoi
+    },
+    [getbyidtournoi.rejected]:(state,action)=>{
         state.status="failed";
     },
     [addtournoi.pending]:(state)=>{

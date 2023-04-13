@@ -7,6 +7,7 @@ import PrivateRoute from "./routes/PrivateRoute";
 import Home from './components/Home';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import Lobby from "./components/Lobby";
 function App() {
   const isAuth = localStorage.getItem("token");
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login />} />
-        
+        <Route path="/partie/:id" element={<Lobby />} />
 
         <Route element={<PrivateRoute />}>
         <Route path='/dashboard' element={<Dashboard/>}/>

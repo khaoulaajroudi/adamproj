@@ -1,10 +1,23 @@
-import React, {  useEffect } from 'react'
+import React, {  useEffect, useState } from 'react'
 import coin from "../Images/coin.png";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { getbyidtournoi } from '../JS/tournoiSlice/tournoiSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
 
-const Lobby = ({pdp,state}) => {
+const Lobby = ({pdp}) => {
+  const params=useParams()
+  const [tournoi, settournoi] = useState({})
+  console.log(params)
+  const dispatch=useDispatch()
+  useEffect(async () => {
+ dispatch(getbyidtournoi(params.id))
+  }, []);
+  const tournoipartie=useSelector((state)=>state.tournoi?.tournoi)
+  console.log(tournoipartie)
   return (
     <div className='lobby'>
       <h1>My Lobby:</h1>
@@ -18,7 +31,7 @@ const Lobby = ({pdp,state}) => {
                 <button>I'M READY</button>
             </div>
             <div className="lobby_betmoney">
-                <span>{state.money}</span>
+                <span></span>
                 <img src={coin} alt="" />
             </div>
             <div className="lobby_user1">
